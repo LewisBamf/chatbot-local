@@ -14,17 +14,21 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            padding: 20px;  /* Added padding to avoid content touching edges */
         }
         .container {
             background-color: #3e3e3e;
             border-radius: 10px;
             padding: 20px;
-            width: 400px;
+            width: 90%;
+            max-width: 600px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;  /* Added scroll for overflow */
         }
         h1 {
             text-align: center;
             font-size: 24px;
+            margin-bottom: 20px;
         }
         form {
             display: flex;
@@ -59,6 +63,9 @@
             padding: 10px;
             margin-top: 20px;
             white-space: pre-wrap;
+        }
+        .generated-text h2 {
+            margin-top: 0;
         }
     </style>
 </head>
