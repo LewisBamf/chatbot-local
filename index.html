@@ -1,1 +1,81 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Generation with GPT-2</title>
+    <style>
+        body {
+            background-color: #2e2e2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #3e3e3e;
+            border-radius: 10px;
+            padding: 20px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4e4e4e;
+            color: #ffffff;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #5e5e5e;
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #6e6e6e;
+        }
+        .generated-text {
+            background-color: #4e4e4e;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Text with GPT-2</h1>
+        <form method="POST" action="/">
+            <label for="prompt">Enter Prompt:</label>
+            <input type="text" id="prompt" name="prompt" required>
+            <button type="submit">Generate</button>
+        </form>
+        {% if generated_text %}
+        <div class="generated-text">
+            <h2>Generated Text:</h2>
+            <p>{{ generated_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
